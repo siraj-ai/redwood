@@ -7,7 +7,7 @@ export const useAuth = () => {
   return USE_AUTH()
 }
 
-const RedwoodProvider = ({ auth = {}, children }) => {
+const RedwoodProvider = ({ client = {}, auth = {}, children }) => {
   const {
     AuthProvider = React.Fragment,
     GraphQLProvider = RealGraphQLProvider,
@@ -16,7 +16,7 @@ const RedwoodProvider = ({ auth = {}, children }) => {
   USE_AUTH = useAuth
   return (
     <AuthProvider>
-      <GraphQLProvider>{children}</GraphQLProvider>
+      <GraphQLProvider client={client}>{children}</GraphQLProvider>
     </AuthProvider>
   )
 }
