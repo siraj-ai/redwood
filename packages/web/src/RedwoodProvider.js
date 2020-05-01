@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import ApolloClient from 'apollo-client'
 
 import { GraphQLProvider as RealGraphQLProvider } from 'src/graphql'
 
@@ -22,6 +23,7 @@ const RedwoodProvider = ({ client = {}, auth = {}, children }) => {
 }
 
 RedwoodProvider.propTypes = {
+  client: PropTypes.objectOf(ApolloClient),
   auth: PropTypes.shape({
     AuthProvider: PropTypes.func.isRequired,
     useAuth: PropTypes.func.isRequired,

@@ -1,5 +1,5 @@
 {
-  "name": "@siraj-redwoodjs/web",
+  "name": "@redwoodjs/web",
   "version": "0.4.0",
   "files": [
     "dist"
